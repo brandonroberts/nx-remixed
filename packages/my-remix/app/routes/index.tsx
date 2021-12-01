@@ -24,6 +24,10 @@ export let loader: LoaderFunction = () => {
       {
         name: "Remix Discord",
         url: "https://discord.gg/VBePs6d"
+      },
+      {
+        name: "Nx Docs",
+        url: "https://nx.dev"
       }
     ],
     demos: [
@@ -49,7 +53,7 @@ export let loader: LoaderFunction = () => {
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
   return {
-    title: "Remix Starter",
+    title: "Remix + Nx",
     description: "Welcome to remix!"
   };
 };
@@ -61,7 +65,7 @@ export default function Index() {
   return (
     <div className="remix__page">
       <main>
-        <h2>Welcome to Remix!</h2>
+        <h2>Welcome to Remix + Nx!</h2>
         <p>We're stoked that you're here. 🥳</p>
         <p>
           Feel free to take a look around the code to see how Remix does things,
