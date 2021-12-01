@@ -1,0 +1,22 @@
+import type { MetaFunction, LinksFunction } from "remix";
+
+
+export let meta: MetaFunction = () => {
+  return {
+    title: "<%= route %> route"
+  };
+};
+
+export let links: LinksFunction = () => {
+  return [];
+};
+
+export default function Index() {
+  return (
+    <div>
+      <div>
+        <h2><%= route %> works!</h2>
+      </div>
+    </div>
+  );
+}
