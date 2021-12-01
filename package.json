@@ -5,6 +5,15 @@
   "scripts": {
   },
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ],
+    "nohoist": [
+      "**/my-remix",
+      "**/my-remix/**"
+    ]
+  },
   "dependencies": {
   },
   "devDependencies": {
