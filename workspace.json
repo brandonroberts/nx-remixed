@@ -17,6 +17,13 @@
             "jestConfig": "packages/my-remix/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/my-remix/**/*.{js,ts}"]
+          }
         }
       }
     },
