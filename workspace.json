@@ -4,6 +4,12 @@
     "my-remix": {
       "root": "packages/my-remix",
       "targets": {
+        "dev": {
+          "executor": "@nrwl/workspace:run-script",
+          "options": {
+            "script": "remix dev"
+          }
+        },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/packages/my-remix"],
@@ -13,6 +19,35 @@
           }
         }
       }
+    },
+    "my-remix-e2e": {
+      "root": "packages/my-remix-e2e",
+      "sourceRoot": "packages/my-remix-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/my-remix-e2e/cypress.json",
+            "skipServe": true,
+            "baseUrl": "http://localhost:3000"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-remix:dev:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/my-remix-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["my-remix"]
     }
   }
 }
